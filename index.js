@@ -35,7 +35,7 @@ switch (args[0].toLowerCase()){
             color: 3447003,
       
            
-            description: "10$ PayPal for get your whitelist code (off sale) ", 
+            description: "DM THE OWNER OR THE WHITELISTER! ", 
           }});
   break;
 
