@@ -31,7 +31,13 @@ switch (args[0].toLowerCase()){
     message.author.sendMessage(":purchase - get all infos for buy the script hub.")
     break;
     case "purchase":
-    message.channel.sendMessage(" ``` DM @[CODEUR-SQUAD]▲Aida▲#0838 or @Lolilol LEL#7469 for bought it :D ``` ");
+   EmbedBuilder builder = new EmbedBuilder();
+    builder.setTitle("Purchase");
+    builder.setAuthor(user.getName(), null, user.getAvatarUrl()+"?size=256");
+    builder.setDescription(" DM @[CODEUR-SQUAD]▲Aida▲ or @Lolilol LEL#7469 for bought it :smile: ");
+    builder.setColor(Color.YELLOW);
+
+    channel.sendMessage(builder.build()).queue();
   break;
 
 
