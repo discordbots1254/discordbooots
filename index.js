@@ -31,7 +31,12 @@ switch (args[0].toLowerCase()){
     message.author.sendMessage(":purchase - get all infos for buy the script hub.")
     break;
     case "purchase":
- message.channel.sendMessage("DM OWNER OR WHITELISTER");
+        message.channel.send({embed: {
+            color: 3447003,
+      
+           
+            description: "10$ PayPal for get your whitelist code (off sale) ", 
+          }});
   break;
 
 
