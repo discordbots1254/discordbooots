@@ -31,13 +31,7 @@ switch (args[0].toLowerCase()){
     message.author.sendMessage(":purchase - get all infos for buy the script hub.")
     break;
     case "purchase":
-   EmbedBuilder builder = new EmbedBuilder();
-    builder.setTitle("Purchase");
-    builder.setAuthor(user.getName(), null, user.getAvatarUrl()+"?size=256");
-    builder.setDescription(" DM @[CODEUR-SQUAD]▲Aida▲ or @Lolilol LEL#7469 for bought it :smile: ");
-    builder.setColor(Color.YELLOW);
-
-    channel.sendMessage(builder.build()).queue();
+ message.channel.sendMessage("DM OWNER OR WHITELISTER");
   break;
 
 
