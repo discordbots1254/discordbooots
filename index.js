@@ -1,54 +1,52 @@
 const Discord = require("discord.js");
-
-const TOKEN = "MzY4MDY1NjE4MDU1OTIxNjc1.DMEjgA.CBognkHU0WP-1PETx2lCWztdbHk";
-
-var bot = new Discord.Client();
-const PREFIX = ":";
-
-
-
-
-bot.on("message",function(message){
-
-
-
-
-if (message.author.equals(bot.user)) return;
-if (!message.content.startsWith(PREFIX)) return;
-
-var args = message.content.substring(PREFIX.length).split(" ");
-
-switch (args[0].toLowerCase()){
-
-    case "credits":
-    message.channel.sendMessage("``` OWNER: @[CODEUR-SQUAD]▲Aida▲#0838 ``` ");
-    message.channel.sendMessage("``` DEV: @Lolilol LEL#7469 ``` ");
-    break;
-    case"help":
-    message.channel.sendMessage(" :white_check_mark:, **Help sents**");
-    message.author.sendMessage("commands prefix ':' Commands list :")
-    message.author.sendMessage(":credits - get all credits")
-    message.author.sendMessage(":purchase - get all infos for buy the script hub.")
-    break;
-    case "purchase":
-        message.channel.send({embed: {
-            color: 3447003,
-      
-           
-            description: "DM THE OWNER OR THE WHITELISTER! ", 
-          }});
-  break;
-
-
-
-    
-
-
-    default:
-    message.channel.sendMessage("ERROR COMMAND!");
-
-}
-
+const client = new Discord.Client();
+client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag}!`);
 });
 
-bot.login(process.env.BOT_TOKEN);
+client.on('message', msg => {
+  if (msg.content === ';fire me') {
+    msg.reply("HOLY SHIT YOUR BODY IS DIE")
+  }
+});
+client.on('message', msg => {
+    if (msg.content === ';sp me') {
+      msg.reply("Sparkles added")
+    }
+  });
+
+  client.on('message', msg => {
+    if (msg.content === ';admin me') {
+      msg.reply("LOL YOU CAN'T ADMIN YOU")
+    }
+  });
+
+  client.on('message', msg => {
+      if (msg.content === 'ping') {
+        msg.reply("``"+new Date().getTime() - msg.createdTimestamp + "``"  + " ms");
+
+
+
+      }
+
+
+
+  });
+ 
+  client.on(`message`, message => {
+    if (message.content === "/download") {
+      let modRole = message.guild.roles.find("name", "Buyers");
+      if(message.member.roles.has(modRole.id)) {
+        message.channel.sendMessage(`YAY! Your an Buyers check your DMs.`)
+        message.author.sendMessage("Thanks for purchasing :")
+        message.author.sendMessage("Website : http://bridge-script-hub-official.cf ")
+        message.author.sendMessage("Download : http://bridge-script-hub-official.cf/Bridges%20files.zip ")
+        message.author.sendMessage("Forum : http://bridge-script-hub-official.cf/forum/ ")
+        message.author.sendMessage("Whitelist website : http://bridge-script-hub-official.cf/ClientPage/ `DM THE OWNER FOR GET YOUR USERNAME AND PASSWORD`")
+      } else {
+        return message.reply("Your not an Buyers :(")
+      }
+    }
+  });
+
+client.login('process.env.BOT_TOKEN');
